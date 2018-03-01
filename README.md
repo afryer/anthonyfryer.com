@@ -1,10 +1,8 @@
-# NuePress
+# anthonyfryer.com
 
 [Nuxt.js](https://github.com/nuxt/nuxt.js) + [WordPress REST API](https://developer.wordpress.org/rest-api/)
 
-## Demo
-
-[https://nuepress.kmr.io](https://nuepress.kmr.io/)
+## A Vue blog using wordpress api
 
 ## Build Setup
 
