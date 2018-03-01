@@ -1,0 +1,94 @@
+/*------------------------------------*\
+    $GALLERY
+\*------------------------------------*/
+
+.gallery-example {
+  @include between-breakpoints($xs-min, $xs-max) {
+    position: relative;
+    padding: 0 40px 60px;
+  }
+}
+
+.gallery-example__container {
+  @include between-breakpoints($xs-min, $xs-max) {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  @include breakpoint(sm) {
+    display: flex;
+  }
+}
+
+.gallery-example__item {
+  @include breakpoint(sm) {
+    justify-content: space-between;
+
+    & + & {
+      margin-left: 40px;
+    }
+  }
+}
+
+.gallery-example__pagination {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+
+  @include breakpoint(sm) {
+    display: none;
+  }
+
+  span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    text-indent: -9999px;
+    background-color: $grey-dark;
+    border-radius: 50%;
+    margin: 0 15px;
+
+    &.cycle-pager-active {
+      cursor: default;
+      background-color: darken($grey-dark, 20%);
+    }
+  }
+}
+
+.gallery-example__prev,
+.gallery-example__next {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 28px;
+  color: $grey-dark;
+  border: 1px solid $grey-dark;
+  border-radius: 50%;
+  margin-top: -15px;
+
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+
+.gallery-example__prev {
+  left: 0;
+
+  &:before {
+    content: '<';
+  }
+}
+
+.gallery-example__next {
+  right: 0;
+
+  &:before {
+    content: '>';
+  }
+}

@@ -1,0 +1,33 @@
+/*------------------------------------*\
+  $SITE SEARCH
+\*------------------------------------*/
+
+// Site search box typically found at the right of the page header
+
+// Sample usage
+
+// <div class="form form-inline site-search">
+//   <fieldset>
+//     <legend class="visually-hidden">Search</legend>
+//     <label class="visually-hidden" for="txtSearchTerm">Search site:</label>
+//     <input id="txtSearchTerm" class="site-search__term" type="text" placeholder="Search site" />
+//     <input id="btnSiteSearch" class="btn site-search__btn" type="submit" value="Search" />
+//   </fieldset>
+// </div>
+
+.site-search {
+}
+
+.site-search__term {
+  width: 150px !important;
+  float: left;
+  margin-right: 5px;
+}
+
+.site-search__btn {
+  padding: 6px 10px !important;
+  float: left;
+}
+
+.site-search__error {
+}

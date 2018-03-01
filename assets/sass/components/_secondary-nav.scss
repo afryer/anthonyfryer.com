@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    $LEFT NAV
+\*------------------------------------*/
+
+.secondary-nav {
+  width: 240px;
+  float: left;
+}
+
+/* first level items */
+
+/*ul*/
+.secondary-nav__tier-1 {
+  width: 100%;
+  margin: 0;
+  background: $grey-light;
+  list-style: none;
+}
+
+/*li*/
+.secondary-nav__tier-1-item {
+  padding: 0;
+  margin: 0;
+}
+
+/*a*/
+.secondary-nav__tier-1-link {
+  padding: 10px;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  color: $color-text !important;
+
+  &:hover {
+    background: $grey-lighter;
+  }
+}
+
+/* second level items */
+
+/*ul*/
+.secondary-nav__tier-2 {
+  width: 100%;
+  margin: 0;
+  list-style: none;
+}
+
+/*li*/
+.secondary-nav__tier-2-item {
+  padding: 0;
+  margin: 0;
+}
+
+/*a*/
+.secondary-nav__tier-2-link {
+  padding: 10px 10px 10px 35px;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: $color-text !important;
+
+  &:hover {
+    background: $grey-lighter;
+  }
+}

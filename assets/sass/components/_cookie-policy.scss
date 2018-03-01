@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    $COOKIE POLICY
+\*------------------------------------*/
+
+.cookie {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: $grey-dark;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  opacity: 0.9;
+  z-index: $z-index-cookie-policy;
+}
+
+.cookie__inner {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 50px 5px 15px;
+}
+
+.cookie__text {
+  float: left;
+  color: $white;
+
+  a {
+    color: $white;
+  }
+}
+
+.cookie__btn {
+  @include sprite(icon-close, (width: 22px, height: 22px));
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  text-indent: -9999em;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  overflow: hidden;
+  background-color:transparent;
+  border: none;
+}

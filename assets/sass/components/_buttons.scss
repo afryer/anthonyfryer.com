@@ -1,0 +1,121 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  //white-space: nowrap;
+  font-family: inherit;
+  font-size: 100%;
+  cursor: pointer;
+  border: $border;
+  margin: 0;
+  padding: 15px;
+  border-radius: $border-radius;
+  background-color: $white;
+  color: $color-text;
+}
+
+.btn {
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+
+  /* only remove default outline if alternative focus styling is provided
+  *  2.4.7 Focus Visible: Any keyboard operable user interface has a mode of operation where
+  *  the keyboard focus indicator is visible. (Level AA)
+  */
+
+  // &:active,
+  // &:focus {
+  //   outline: none;
+  // }
+  //
+}
+
+.btn--compact {
+  padding: 5px 10px;
+}
+
+.btn--wide {
+  padding: 15px 50px;
+}
+
+.btn--primary {
+  background-color: $red;
+  color: $white !important;
+}
+
+.btn--secondary {
+  background-color: $green;
+  color: $white !important;
+}
+
+.btn--tertiary {
+  background-color: $blue;
+  color: $white !important;
+}
+
+.btn--link {
+  border: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Suggestion - some alternative named variations
+// .btn--success
+// .btn--warning
+// .btn--danger
+// .btn--info
+
+// Suggestion - add size variations
+// btn--small
+// btn--large
+
+.btn--block {
+  display: block !important;
+  width: 100% !important;
+}
+
+// Suggestion - add button-specific responsive utilities
+
+
+// scroll top button
+
+.btn-scroll-top {
+  position: fixed;
+  z-index: 100;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  cursor: pointer;
+  text-indent: -2000em;
+  background-color: $grey-dark;
+  border: 0;
+  opacity: 0;
+  transition: 300ms ease all;
+
+  @include breakpoint(md) {
+    right: 65px;
+    bottom: 65px;
+  }
+
+  &:after {
+    @include sprite(chevron-up-white);
+    content: '';
+    display: block;
+    position: absolute;
+    left:  10px;
+    top: 15px;
+  }
+
+  &.is-active {
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,219 @@
+//
+// Modals
+// --------------------------------------------------
+// example html markup
+/*
+      <div class="modal-wrapper">
+      <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="modal-close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+          <h4>Modal title</h4>
+        </div>
+
+      <div class="modal-body">
+        <h4>Text in a modal</h4>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+      </div>
+      </div>
+*/
+
+// z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+// moved into z-index master list in _variables.scss
+
+// $z-index-modal-backdrop:     1040 !default;
+// $z-index-modal:              1050 !default;
+
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners
+
+// Kill the scroll on the body
+
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-modal;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  &.fade {
+    transition: opacity 0.2s linear, top 0.2s ease-out;
+    top: -20%;
+    outline: none;
+
+    // fixes outline in chrome
+
+  }
+
+  &.fade.in {
+    transition: opacity 0.3s linear, top 0.2s ease-out;
+    top: 0%;
+  }
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+
+  // paddding round modal on a mobile device
+  padding: 15px;
+  z-index: $z-index-modal-dialog;
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  border: $border;
+  border-radius: $border-radius;
+  background-clip: padding-box;
+
+  // Remove focus outline from opened modal
+  outline: none;
+  background: #fff;
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: $z-index-modal-backdrop;
+  background-color: #000;
+
+  // Fade for backdrop
+  &.fade {
+    opacity: 0;
+  }
+
+  &.in {
+    opacity: 0.5;
+  }
+}
+
+// Close icon
+.modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border: $border;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+// Modal header
+// Top section of the modal w/ title
+.modal-header {
+  padding: 20px;
+  border-bottom: $border;
+  min-height: 30px;
+  position: relative;
+}
+
+// Title text within header
+.modal-title {
+  margin: 0;
+  line-height: $base-line-height;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  padding: 30px;
+}
+
+// Footer (for actions)
+.modal-footer {
+  margin-top: 15px;
+  padding: 20px;
+  text-align: right;
+
+  // right align buttons
+  border-top: $border;
+
+  @include clearfix;
+
+  // clear it in case folks use .pull-* classes on buttons
+
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0;
+    // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+//  =========================
+//  = Scaling up the modals =
+//  =========================
+
+// As this is mobile first, the initial widths of the modal (.modal-dialog) has no width assigned.
+//As you start to scale up, you are able to quickly resive the modal for the browser window
+
+@include breakpoint(sm) {
+  .modal-dialog {
+    // width of modal
+    width: 650px;
+
+    //Height of modal from top of screen
+    padding: 60px 0;
+  }
+
+  .modal-content {
+    // put some box shadow on it all on larger screens where it makes sense and doesn't impact on performance
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+@include breakpoint(md) {
+  .modal-dialog {
+    // Width of modal
+    width: 750px;
+  }
+}

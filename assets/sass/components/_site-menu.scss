@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    $SITE MENU
+\*------------------------------------*/
+
+.site-menu {
+  margin: 0;
+  padding: 0;
+  clear: both;
+  overflow: hidden;
+  list-style: none;
+}
+
+/*li*/
+.site-menu__item {
+  margin-right: 2px;
+  float: left;
+  border: 1px solid $color-border;
+}
+
+/*a*/
+.site-menu__link {
+  @include font-size(1.8);
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: $color-text !important;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

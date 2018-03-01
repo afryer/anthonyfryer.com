@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    $BREADCRUMB
+\*------------------------------------*/
+
+//  Sample usage
+
+//  <ol class="breadcrumb">
+//      <li><a href="#">Home</a></li>
+//      <li><a href="#">About</a></li>
+//      <li><a href="#">Media Centre</a></li>
+//      <li>Contact</li>
+//  </ol>
+
+.breadcrumb {
+  margin-left: 0;
+  list-style: none;
+}
+
+/*li*/
+.breadcrumb__item {
+  display:inline;
+  margin-right: 4px;
+
+  &:before {
+    content: '> ';
+  }
+
+  &:first-child:before {
+    display: none;
+  }
+}
+
+/*a*/
+.breadcrumb__link {
+  text-decoration: underline;
+}

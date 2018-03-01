@@ -1,0 +1,32 @@
+/*------------------------------------*\
+    $PODS
+\*------------------------------------*/
+
+.pod {
+  width: 100%;
+  margin-bottom: 10px;
+  display: inline-block;
+  border: $border;
+  border-radius: $border-radius;
+}
+
+.pod__header {
+  padding: 10px;
+  border-bottom: 1px solid $grey-light;
+}
+
+.pod__title {
+  margin-bottom: 0;
+}
+
+.pod__content {
+  padding: 10px;
+}
+
+.pod__img {
+}
+
+// column mixin
+.column-mixin-example {
+  @include make-sm-column(4);
+}

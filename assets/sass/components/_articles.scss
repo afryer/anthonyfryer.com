@@ -1,0 +1,144 @@
+// Articles are for listing pages with a list of articles
+
+.articles {
+	padding: 0 32px;
+	//max-width: 900px;
+	width: 100%;
+	justify-content: center;
+	margin: 0 auto;
+
+	@media (max-width: 1000px) {
+	  max-width: none;
+	}
+
+	@media (max-width: 700px) {
+	  padding: 0 16px;
+	}
+}
+
+.article {
+	    &.page-enter-active .narrow {
+      transition: transform 1s cubic-bezier(.11,.89,.31,.99), opacity 0.75s ease-out;
+    }
+
+    &.page-enter .narrow, .page-leave-to .narrow {
+      transform: translateY(16px);
+    }
+}
+
+
+
+
+.single-article {
+	padding: 0 32px;
+  max-width: 900px;
+	width: 100%;
+	justify-content: center;
+	margin: 0 auto;
+
+	@media (max-width: 1000px) {
+	  max-width: none;
+	}
+
+	@media (max-width: 700px) {
+	  padding: 0 16px;
+	}
+
+}
+
+
+    .content {
+      border-top: 1px dotted lighten($primary, 20%);
+      padding-top: 32px;
+      margin-top: 32px;
+
+      .alignnone,
+      .size-full,
+      .wp-caption {
+        background-color: #fff;
+        padding: 16px;
+        display: block;
+        margin-bottom: 32px;
+
+        img {
+          display: block;
+          padding: 0;
+          margin-bottom: 16px;
+        }
+
+        &.alignnone {
+          max-width: 100%;
+        }
+
+        &.aligncenter {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        &.alignleft {
+          float: left;
+          margin-right: 32px;
+          width: initial;
+        }
+
+        &.alignright {
+          float: right;
+          margin-left: 32px;
+          width: initial;
+        }
+      }
+
+      .wp-caption {
+        p {
+          margin-bottom: 0;
+
+          & + p {
+            margin-top: 16px;
+          }
+        }
+      }
+
+      p {
+        margin-bottom: 32px;
+        margin-top: 0;
+      }
+
+      a {
+        color: $accent;
+        position: relative;
+        &:hover {
+          color: $accent;
+        }
+
+        &::after {
+          background: rgba($accent, 0.5);
+          content: '';
+          height: 1px;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 100%;
+          transform: translateY(-4px);
+          transition: height 0.1s, opacity 0.1s, transform 0.1s;
+          width: 100%;
+        }
+
+        &:hover,
+        &:focus {
+          &::after {
+            height: 4px;
+            opacity: 1;
+            transform: translateY(0px);
+          }
+        }
+      }
+
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+
+      > *:first-child {
+        margin-top: 0;
+      }
+    }

@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    $PAGINATION
+\*------------------------------------*/
+
+// Sample usage
+
+// Pagination (multiple pages)
+// --------------------------------------------------
+
+// Space out pagination from surrounding content
+
+.pagination__wrapper {
+  margin: 10px 0;
+  clear: both;
+  text-align: center;
+}
+
+/*ol*/
+.pagination {
+  display: inline-block;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+/*li*/
+.pagination__item {
+  display: inline;
+}
+
+/*a*/
+.pagination__link {
+  float: left;
+  padding: 4px 8px;
+  line-height: $base-line-height;
+  display: inline;
+
+  &:hover,
+  &:focus {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+/*a*/
+
+.pagination__link--active,
+.pagination__link--ellipsis {
+  text-decoration: none;
+}

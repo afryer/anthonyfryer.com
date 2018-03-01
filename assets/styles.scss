@@ -1,0 +1,121 @@
+/*------------------------------------*\
+    $COMMENTS
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    $SECTION HEADING
+\*------------------------------------*/
+
+/* ----- single line subheading ----- */
+
+/**
+ * multi-line comments that will output
+ * in the CSS depending on the mode
+ * these comments use DocBlock formatting
+ */
+
+/* short comment */
+
+
+/*ul*/
+
+// use this for multiline comments
+// that will not output
+// in the CSS
+
+
+/*------------------------------------*\
+    $UTILITIES
+\*------------------------------------*/
+
+@import "sass/utilities/variables";
+@import "sass/utilities/mixins";
+@import "sass/utilities/sprites";
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+// generic utility styles, variables and mixins, base styles, unclassed HTML elements etc.
+@import "sass/base/normalize";
+@import "sass/base/reset";
+@import "sass/base/helper";
+@import "sass/base/typography";
+@import "sass/base/forms";
+@import "sass/base/tables";
+
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+// /**
+//  * structural elements/areas, grids, columns etc.
+//  */
+// @import "sass/layout/layout";
+// @import "sass/layout/bootstrap-grid";
+
+
+// /*------------------------------------*\
+//     $VENDOR
+// \*------------------------------------*/
+// /**
+//  * CSS or Sass from other projects - do not change, but overwrite if necessary.
+//  */
+// //@import "sass/libs/colorpicker";
+// //@import "sass/libs/jquery.ui.core";
+
+// /*------------------------------------*\
+//     $GLOABL
+// \*------------------------------------*/
+// /**
+//  * Global elements that are on all or the majority of pages, such as header, footer etc
+//  */
+// @import "sass/global/header";
+// @import "sass/global/footer";
+
+
+// /*------------------------------------*\
+//     $COMPONENTS
+// \*------------------------------------*/
+// /**
+//  * objects and abstractions etc.
+//  */
+
+@import "sass/components/articles";
+// @import "sass/components/breadcrumb";
+// @import "sass/components/buttons";
+// @import "sass/components/cookie-policy";
+// @import "sass/components/media-object";
+// @import "sass/components/modals";
+// @import "sass/components/pagination";
+// @import "sass/components/pods";
+// @import "sass/components/primary-nav";
+// @import "sass/components/responsive-video";
+// @import "sass/components/secondary-nav";
+// @import "sass/components/site-menu";
+// @import "sass/components/site-search";
+// @import "sass/components/gallery";
+// @import "sass/components/social-share";
+
+
+// /*------------------------------------*\
+//     $NON-MODULAR
+// \*------------------------------------*/
+// /**
+//  * template-specific/temporary pages etc.
+//  */
+// @import "sass/non-modular/T01-index";
+
+// //Temp fixes must always come after other template includes
+// @import "sass/non-modular/temp-fixes";
+
+
+// /*------------------------------------*\
+//     $PRINT
+// \*------------------------------------*/
+// /**
+//  * print style
+//  */
+// @import "sass/base/print";

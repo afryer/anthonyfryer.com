@@ -1,0 +1,42 @@
+/*------------------------------------*\
+    $MEDIA OBJECT
+\*------------------------------------*/
+
+/**
+ * variation on the "classic/"stubonella version which uss floats to acheive layout
+ * this version uses display table to allow greater flexibility of image alignment with content
+ */
+
+.media-object {
+  margin: 0 0 60px 0;
+  padding: 0;
+  display: table;
+  overflow: hidden;
+}
+
+.media-object__left,
+.media-object__right,
+.media-object__body {
+  display: table-cell;
+  vertical-align: top; // default alignment
+}
+
+/**
+ *  use helper classes for image margins
+ *  eg:
+ *
+ *  <img src="/images/placeholder1.gif" alt="" class="margin-left-40">
+ *
+ *  rather than
+ *  .media-object__left img {
+ *   margin-right: 40px;
+ *  }
+ *
+ *  use alignment helper classes to align image with content
+ *  eg:
+ *
+ * .align-top    { vertical-align: top!important; }
+ * .align-middle { vertical-align: middle!important; }
+ * .align-bottom { vertical-align: bottom!important; }
+ *
+ */

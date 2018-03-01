@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    $ACCORDION
+\*------------------------------------*/
+
+.accordion-panel {
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 10px 10px 5px 10px;
+  border: 1px solid $grey-light;
+}
+
+.accordion-panel__heading {
+  width: 100%;
+}
+
+.accordion-panel__button {
+  width: 100%;
+  position: relative;
+  padding: 5px 20px 5px 20px;
+
+  &:before {
+    @include sprite(icon-plus-grey);
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+  }
+}
+
+.accordion-panel__button.is-active {
+  &:before {
+    @include sprite(icon-minus-grey);
+  }
+}
+
+// hide accordion content by default
+
+.accordion-panel__content {
+  display: none;
+}
+
+// show content by default if JavaScript is disabled
+
+.no-js .accordion-panel__content {
+  display: block;
+}
